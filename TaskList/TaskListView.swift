@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct Tarefa: Identifiable {
-    let id = UUID()
-    var nome = ""
-    var date = Date.now
-    var pronta = false
-}
-
 struct TaskListView: View {
     
     @State var tarefas: [Tarefa] = [
@@ -29,9 +22,38 @@ struct TaskListView: View {
         Tarefa(nome: "Preparar almoço", date: Date.now)
     ]
     
+    @State var apresentarSheet: Bool = false
+    
+    @State var novaTarefa: Tarefa = Tarefa()
+    
     var body: some View {
-        List(tarefas) { tarefa in
-            Text(tarefa.nome)
+        NavigationStack {
+            List {
+                ForEach(tarefas, id: \.self) { tarefa in
+                    NavigationLink {
+                        TaskDetailView()
+                    } label: {
+                        Text(tarefa.nome)
+                    }
+                }.onDelete { index in
+                    tarefas.remove(atOffsets: index)
+                    print(tarefas)
+                }
+            }
+            .navigationTitle("Tarefas")
+            .toolbar {
+                Button("Add") {
+                    novaTarefa = Tarefa()
+                    apresentarSheet = true
+                }
+            }
+            .sheet(isPresented: $apresentarSheet) {
+                if novaTarefa.nome.isEmpty == false {
+                    tarefas.append(novaTarefa)
+                }
+            } content: {
+                TaskAddView(novaTarefa: $novaTarefa, estaCriando: $apresentarSheet)
+            }
         }
     }
 }

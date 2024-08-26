@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct TaskDetailView: View {
+    
+    var tarefa = Tarefa(nome: "Tarefa Teste")
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Marcar como pronta") {
+                
+            }
+        }.navigationTitle(tarefa.nome)
+    }
+    
+    mutating func concluir() {
+        self.tarefa.concluir()
     }
 }
 
