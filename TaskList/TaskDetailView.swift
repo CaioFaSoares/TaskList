@@ -16,7 +16,19 @@ struct TaskDetailView: View {
             Button("Marcar como pronta") {
                 
             }
-        }.navigationTitle(tarefa.nome)
+        }
+        .navigationTitle(tarefa.nome)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    
+                } label: {
+                    Text("Volta")
+                }
+
+            }
+        }
     }
     
     mutating func concluir() {
