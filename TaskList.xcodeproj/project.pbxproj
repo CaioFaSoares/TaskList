@@ -14,6 +14,7 @@
 		D60EE0AB2C77E75F00A8B859 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60EE0AA2C77E75F00A8B859 /* TaskListView.swift */; };
 		D60EE0AD2C77E9A100A8B859 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60EE0AC2C77E9A100A8B859 /* TaskDetailView.swift */; };
 		D66091D22C7D307E00FD3984 /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66091D12C7D307A00FD3984 /* Tarefa.swift */; };
+		D6C67D762C7FE2B000EDD0EC /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C67D752C7FE2AD00EDD0EC /* JSONService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D60EE0AA2C77E75F00A8B859 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		D60EE0AC2C77E9A100A8B859 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		D66091D12C7D307A00FD3984 /* Tarefa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarefa.swift; sourceTree = "<group>"; };
+		D6C67D752C7FE2AD00EDD0EC /* JSONService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				D66091D32C7D30AD00FD3984 /* Model */,
 				D60EE0AA2C77E75F00A8B859 /* TaskListView.swift */,
 				D60EE0AC2C77E9A100A8B859 /* TaskDetailView.swift */,
+				D6C67D752C7FE2AD00EDD0EC /* JSONService.swift */,
 			);
 			path = TaskList;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C67D762C7FE2B000EDD0EC /* JSONService.swift in Sources */,
 				D66091D22C7D307E00FD3984 /* Tarefa.swift in Sources */,
 				D60EE0AD2C77E9A100A8B859 /* TaskDetailView.swift in Sources */,
 				D60EE09F2C77E72600A8B859 /* ContentView.swift in Sources */,
