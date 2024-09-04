@@ -8,11 +8,36 @@
 import SwiftUI
 
 struct TaskDetailView: View {
+    
+    @Binding var tarefa: Tarefa
+    @Binding var deleteTask: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section {
+                Text(tarefa.nome).font(.headline)
+                Text(tarefa.description)
+                HStack(alignment: .top) {
+                    Spacer()
+                    Text("Criada em")
+                        .font(.caption)
+                    Text(String(tarefa.date.formatted()))
+                }
+            }
+            Section {
+                Toggle("Finalizada?", isOn: $tarefa.pronta)
+                Button("Deletar tarefa") {
+                    deleteTask()
+                }.foregroundColor(.red)
+            }
+        }
     }
 }
 
 #Preview {
-    TaskDetailView()
+    TaskDetailView(tarefa: .constant(Tarefa.mock),
+                   deleteTask: .constant {
+        print("Tested")
+    })
 }
+
